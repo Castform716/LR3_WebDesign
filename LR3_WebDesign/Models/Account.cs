@@ -17,7 +17,7 @@ public partial class Account
 
     public double? CreditSum { get; set; }
 
-    //public virtual Customer ItnNavigation { get; set; } = null!;
+    public virtual Customer ItnNavigation { get; set; } = null!;
 
-    //public virtual Bank UsreouNavigation { get; set; } = null!;
+    public virtual Bank UsreouNavigation { get; set; } = null!;
 }

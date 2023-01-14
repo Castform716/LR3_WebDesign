@@ -63,15 +63,15 @@ public partial class BankSystemContext : DbContext
                 .IsFixedLength()
                 .HasColumnName("USREOU");
 
-            //entity.HasOne(d => d.ItnNavigation).WithMany(p => p.Accounts)
-            //    .HasForeignKey(d => d.Itn)
-            //    .OnDelete(DeleteBehavior.ClientSetNull)
-            //    .HasConstraintName("FK__Account__ITN__22AA2996");
+            entity.HasOne(d => d.ItnNavigation).WithMany(p => p.Accounts)
+                .HasForeignKey(d => d.Itn)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Account__ITN__22AA2996");
 
-            //entity.HasOne(d => d.UsreouNavigation).WithMany(p => p.Accounts)
-            //    .HasForeignKey(d => d.Usreou)
-            //    .OnDelete(DeleteBehavior.ClientSetNull)
-            //    .HasConstraintName("FK__Account__USREOU__21B6055D");
+            entity.HasOne(d => d.UsreouNavigation).WithMany(p => p.Accounts)
+                .HasForeignKey(d => d.Usreou)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Account__USREOU__21B6055D");
         });
 
         modelBuilder.Entity<Bank>(entity =>
